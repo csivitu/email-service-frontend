@@ -1,0 +1,10 @@
+extends:
+  - airbnb
+  - react-app
+rules:
+  react/jsx-indent: 
+    - error
+    - 4
+  indent: 
+    - error
+    - 4
