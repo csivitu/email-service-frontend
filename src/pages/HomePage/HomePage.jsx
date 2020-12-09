@@ -30,7 +30,7 @@ function Home() {
                 <br />
                 <br />
                 <label>
-                    TEXT (alternate text that will only be displayed if html is not supported):
+                    TEXT (alternate text that will be displayed if html is not supported):
                     <textarea name="text" />
                 </label>
                 <br />
