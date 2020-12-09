@@ -3,17 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.21.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
-    "serve": "^11.3.2"
+    "serve": "^11.3.2",
+    "sweetalert2": "^10.12.4"
   },
   "scripts": {
     "deploy:prod": "serve -s build",
     "build": "react-scripts build",
-    "lint": "eslint -c config.eslint.yml . --ext .jsx",
-    "lint:fix": "eslint -c config.eslint.yml . --ext .jsx --fix",
+    "lint": "eslint -c config.eslint.yml . --ext .jsx  --ext .js",
+    "lint:fix": "eslint -c config.eslint.yml . --ext .jsx  --ext .js --fix",
     "start": "react-scripts start"
   },
   "browserslist": {

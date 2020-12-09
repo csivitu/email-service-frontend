@@ -1,11 +1,17 @@
 import React from 'react';
+import Swal from 'sweetalert2';
+import sendMail from '../../utils/sendMail';
 import './HomePage.css';
 
 function Home() {
-    const state = { submitted: '' };
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        state.submitted = 'done!';
+        try {
+            const msg = await sendMail(event.target);
+            Swal.fire({ icon: 'success', text: msg.data.toString() });
+        } catch (e) {
+            Swal.fire({ icon: 'error', text: e.toString() });
+        }
         event.target.reset();
     };
     return (
@@ -30,20 +36,23 @@ function Home() {
                 <br />
                 <br />
                 <label>
-                    AUTHKEY
+                    AUTHKEY:
+                    {' '}
+                    <span className="required">*</span>
                     <input name="auth" type="password" required />
                 </label>
                 <br />
                 <br />
                 <label>
-                    TO (upload txt file):
+                    TO (upload a .txt file):
+                    {' '}
+                    <span className="required">*</span>
                     <input name="to" type="file" accept="text/plain" required />
                 </label>
                 <br />
                 <br />
                 <input type="submit" value="SEND" />
             </form>
-            <p>{state.submitted}</p>
         </div>
     );
 }
