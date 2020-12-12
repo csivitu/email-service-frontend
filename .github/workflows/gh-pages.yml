@@ -20,4 +20,7 @@ jobs:
         npm ci --only=production
         npm run build
         echo $CNAME > build/CNAME
+        git config user.name csivitu
+        git add $FOLDER_NAME
+        git commit --amend --no-edit
         git push origin `git subtree split --prefix $FOLDER_NAME master`:gh-pages --force ||  git subtree push --prefix $FOLDER_NAME origin gh-pages
