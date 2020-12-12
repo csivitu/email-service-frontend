@@ -25,6 +25,7 @@ sample.env
 .env.test.local
 .env.production.local
 .git/
+.github/
 .gitignore
 README.md
 
