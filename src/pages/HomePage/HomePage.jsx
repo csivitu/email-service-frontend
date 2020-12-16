@@ -19,7 +19,9 @@ function Home() {
             <form onSubmit={handleSubmit}>
                 <label>
                     SUBJECT:
-                    <input name="subject" type="text" />
+                    {' '}
+                    <span className="required">*</span>
+                    <input name="subject" type="text" required />
                 </label>
                 <br />
                 <br />
@@ -31,7 +33,9 @@ function Home() {
                 <br />
                 <label>
                     TEXT (alternate text that will be displayed if html is not supported):
-                    <textarea name="text" />
+                    {' '}
+                    <span className="required">*</span>
+                    <textarea name="text" required />
                 </label>
                 <br />
                 <br />
